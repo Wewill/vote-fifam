@@ -1,0 +1,4 @@
+	<header id="hc" >
+<?php $clr[$men]='style="color:red;"'; $cl[$men]='style="filter:grayscale(0);"'; $cp[$men]='filter:grayscale(0);'; ?>
+	&nbsp;<a href="index.php" class="home" <?php echo($cl[0]); ?>>&#127968;</a><?php if ($_SESSION["qui"]=="0") {echo('&nbsp;|&nbsp;<a href="films.php" '.$clr[1].'>Films</a>&nbsp;|&nbsp;<a href="salles.php" '.$clr[2].'>Salles</a>&nbsp;|&nbsp;<a href="seances.php" '.$clr[3].'>Séances</a>&nbsp;|&nbsp;<a href="resultats.php" '.$clr[4].'>Votes</a>');} else if (isset($_SESSION["qui"])) {echo('&nbsp;|&nbsp;<a href="votes.php" '.$clr[5].'>Votes</a>');}?>&nbsp;|&nbsp;<a href="coin.php" class="home" style="vertical-align:middle;<?php echo($cp[10]); ?>" ><img src="img/profil.png" id="prfl" /></a>
+	</header>

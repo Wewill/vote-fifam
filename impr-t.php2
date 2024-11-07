@@ -1,0 +1,79 @@
+<?php
+include('BdD.php');
+if ($_SESSION["qui"]!=0) {header('Location:index.php');}
+$_GET['s']=preg_replace("/[^0-9]/","",$_GET['s']);
+require('../pdf2/fpdf.php');
+ob_get_clean();
+$pdf = new FPDF();
+$pdf->SetMargins(0, 0);
+$pdf->SetTextColor(0, 0, 0);
+$pdf->SetFont('Arial','B',9.5);
+$pdf->SetDrawColor(200,200,200);
+$pdf->SetAutoPageBreak(false);
+$tr=0;
+$rep=$cbdd->query('SELECT * FROM tickets WHERE snc="'.$_GET['s'].'" AND val=1 ORDER BY nno ');
+	while ($donnees = $rep->fetch())
+	{
+	if ($tr%6==0) {$pdf->AddPage(); $tr=0; $pdf->Line( 105,0,105,10); $pdf->Line( 105,287,105,297);}
+	if ($tr%2==0) 
+		{
+		$nume=substr('000'.$donnees["nno"].'',-4);
+		$pdf->SetXY(10,(floor($tr/2)*99+10));
+		$pdf->Cell(65,7,'Série : '.$donnees["serie"].' - N° : '.$nume.'',0,1,'C'); 
+		$pdf->SetX(10);
+		$pdf->Cell(65,7,'Ticket : '.$donnees["code"].'',0,1,'C');
+		$pdf->SetX(10);
+		$pdf->Cell(85,7,'Votez via ce site ou flashez le qr code',0,1,'L');
+		$pdf->SetX(10);
+		$pdf->Cell(85,7,'https://fifam.iszir.fr?n='.$donnees["serie"].'-'.$nume.'-'.$donnees["code"].'',0,1,'C');
+		$pdf->Image('qr/'.$donnees["serie"].'-'.$nume.'.png', 73, (floor($tr/2)*99+8), -250);
+		$pdf->Image('img/liqrn.png', 79.5, (floor($tr/2)*99+14.5), -860);
+		$pdf->Line(10,floor(($tr+2)/2)*99-61,95,floor(($tr+2)/2)*99-61);
+		$pdf->SetX(10);
+		$pdf->Cell(85,7,'ou',0,1,'C');
+		$pdf->SetX(10);
+		$pdf->Cell(85,7,'Je vote avec ce bulletin :',0,1,'C');
+		$pdf->SetX(10);
+		$pdf->Cell(85,7,'Prénom : _______________ Nom : ________________',0,1,'C');
+		$pdf->SetX(10);
+		$pdf->Cell(85,7,'Tél ou email : __________________________________',0,1,'C');
+		$pdf->SetFont('Arial','',40);
+		$pdf->SetX(10);
+		$pdf->Cell(85,30,'__ / 5',0,1,'C');
+		$pdf->SetFont('Arial','B',9.5);
+		$pdf->Line( 0,floor(($tr+2)/2)*99,10,floor(($tr+2)/2)*99);
+		}
+		else
+		{
+		$nume=substr('000'.$donnees["nno"].'',-4);
+		$pdf->SetXY(115,(floor($tr/2)*99+10));
+		$pdf->Cell(65,7,'Série : '.$donnees["serie"].' - N° : '.$nume.'',0,1,'C'); 
+		$pdf->SetX(115);
+		$pdf->Cell(65,7,'Ticket : '.$donnees["code"].'',0,1,'C');
+		$pdf->SetX(115);
+		$pdf->Cell(85,7,'Votez via ce site ou flashez le qr code',0,1,'L');
+		$pdf->SetX(115);
+		$pdf->Cell(85,7,'https://fifam.iszir.fr?n='.$donnees["serie"].'-'.$nume.'-'.$donnees["code"].'',0,1,'C');
+		$pdf->Image('qr/'.$donnees["serie"].'-'.$nume.'.png', 178, (floor($tr/2)*99+8), -250);
+		$pdf->Image('img/liqrn.png', 184.5, (floor($tr/2)*99+14.5), -860);
+		$pdf->Line(115,floor(($tr+2)/2)*99-61,200,floor(($tr+2)/2)*99-61);
+		$pdf->SetX(115);
+		$pdf->Cell(85,7,'ou',0,1,'C');
+		$pdf->SetX(115);
+		$pdf->Cell(85,7,'Je vote avec ce bulletin :',0,1,'C');
+		$pdf->SetX(115);
+		$pdf->Cell(85,7,'Prénom : _______________ Nom : _______________',0,1,'C');
+		$pdf->SetX(115);
+		$pdf->Cell(85,7,'Tél ou email : __________________________________',0,1,'C');
+		$pdf->SetFont('Arial','',40);
+		$pdf->SetX(115);
+		$pdf->Cell(85,30,'__ / 5',0,1,'C');
+		$pdf->SetFont('Arial','B',9.5);
+		$pdf->Line(200,floor(($tr+2)/2)*99,210,floor(($tr+2)/2)*99);
+		}
+	$tr++;
+	}
+$rep->closeCursor();
+$pdf->Output('pdf/Tickets.pdf','F');
+header('location:pdf/Tickets.pdf');
+?>
