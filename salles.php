@@ -10,13 +10,13 @@ $men=2;
 		<link rel="stylesheet" href="style/style.css?s=<?php echo(rand()); ?>" />
 		<link rel="icon" href="img/logo.svg" />
 		<meta name="viewport" content="initial-scale=1.0">
-		<title>Les cinémas FIFAM</title>
+		<title>Les salles — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>
 	<article>
 <br/>
-Liste des lieux de projection <a href="aj-c.php" id="aj" >&#9998;</a>
+Liste des salles de projection <a href="aj-c.php" id="aj" >&#9998;</a>
 <br/><br/>
 	<table>
 	<tr><th>Cinéma</th><th>Salle</th><th>&nbsp;</th></tr>

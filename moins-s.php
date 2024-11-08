@@ -28,7 +28,7 @@ $rep=$cbdd->query('SELECT * FROM films ');
 		<link rel="stylesheet" href="style/style.css?s=<?php echo(rand()); ?>" />
 		<link rel="icon" href="img/logo.svg" />
 		<meta name="viewport" content="initial-scale=1.0">
-		<title>Supprimer une séance</title>
+		<title>Supprimer une séance — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>

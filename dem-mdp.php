@@ -10,14 +10,14 @@ $men=10;
 		<link rel="stylesheet" href="style/style.css?s=<?php echo(rand()); ?>" />
 		<link rel="icon" href="img/logo.svg" />
 		<meta name="viewport" content="initial-scale=1.0">
-		<title>Mot de passe oublié</title>
+		<title>Mot de passe oublié — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>
 	<article>
 	<span class="frm" >
 	<form method="post" action="raz-mdp.php" >
-	RAZ de mon mot de passe :
+	<h3>Réinitialisation de mon mot de passe</h3>
 	<label for="em1"><br/>Adresse email</label><input type="email" placeholder="Adresse email" name="em1" id="em1" value="<?php echo($_SESSION['em']); ?>" required />
 	<br/>
 	<table>

@@ -22,27 +22,25 @@ $rep->closeCursor();
 		<link rel="stylesheet" href="style/style.css?s=<?php echo(rand()); ?>" />
 		<link rel="icon" href="img/logo.svg" />
 		<meta name="viewport" content="initial-scale=1.0">
-		<title>Résultats des votes</title>
+		<title>Résultats des votes — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>
 	<article>
-<br/>
-Mes votes
-<br/><br/>
-<table>
-<?php
-foreach ($film as $keyf => $valuef)
-	{
-	echo('<tr><td>'.$valuef.'</td>');
-	$vt[$keyf]=0;$nb=0;
-	foreach ($vote as $key => $value)
+	<h2>Mes votes</h2>
+	<table>
+	<?php
+	foreach ($film as $keyf => $valuef)
 		{
-		if ($value[0]==$keyf) {$vt[$keyf]+=$value[1];$cd[$keyf]=$value[2];$nb=1;}
+		echo('<tr><td>'.$valuef.'</td>');
+		$vt[$keyf]=0;$nb=0;
+		foreach ($vote as $key => $value)
+			{
+			if ($value[0]==$keyf) {$vt[$keyf]+=$value[1];$cd[$keyf]=$value[2];$nb=1;}
+			}
+		if ($nb!=0) {echo('<td>'.$vt[$keyf].' / 5<br/>Ticket n° :<br/>'.$cd[$keyf].'</td></tr>'."\n");} else {echo('<td>Je n\'ai pas voté</td></tr>'."\n");}
 		}
-	if ($nb!=0) {echo('<td>'.$vt[$keyf].' / 5<br/>Ticket n° :<br/>'.$cd[$keyf].'</td></tr>'."\n");} else {echo('<td>Je n\'ai pas voté</td></tr>'."\n");}
-	}
-?>
+	?>
 	</table>
 	</article>
 	<br/><br/>

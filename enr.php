@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('BdD.php');
 $_SESSION['Message']="";
 $id="";
@@ -23,7 +23,7 @@ if (nty($_POST['cmdp'])==nty($_POST['mdp']) & nty($_POST['cem'])==nty($_POST['em
 	$rep->closeCursor();
 	ini_set( 'display_errors', 1 );
 	error_reporting( E_ALL );
-	$from = "vote@fifam.fr"; 
+	$from = "vote@fifam.fr";
 	$to = $_POST['em'];
 	$subject = "[FIFAM] Confirmation d'inscription";
 	$headers  = 'MIME-Version: 1.0' . "\r\n";

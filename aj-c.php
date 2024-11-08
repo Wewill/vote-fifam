@@ -10,7 +10,7 @@ $men=2;
 		<link rel="stylesheet" href="style/style.css?s=<?php echo(rand()); ?>" />
 		<link rel="icon" href="img/logo.svg" />
 		<meta name="viewport" content="initial-scale=1.0">
-		<title>Ajouter une salle</title>
+		<title>Ajouter une salle — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>

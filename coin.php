@@ -18,7 +18,7 @@ $men=10;
 	<?php echo($_SESSION['Message']);$_SESSION['Message']="" ?>
 	<span class="frm" >
 	<form method="post" action="cnx.php" >
-	Déjà inscrit, je me connecte
+	<h3>Déjà inscrit, je me connecte</h3>
 	<label for="em1">Adresse email</label><input type="email" placeholder="Adresse email" name="em1" id="em1" value="<?php echo($_SESSION['em']); ?>" required />
 	<label for="mdp1">Mot de passe</label><input type="password" placeholder="Mot de passe" name="mdp1" id="mdp1" required />
 	<a href="dem-mdp.php" class="mdpo" >Mot de passe oublié</a>
@@ -27,7 +27,7 @@ $men=10;
 	</span>
 	<span class="frm">
 	<form method="post" action="enr.php" >
-	C'est mon premier vote
+	<h3>C'est mon premier vote, je m'inscris</h3>
 	<br/>
 	<label for="em">Adresse email</label><input type="email" placeholder="Adresse email" name="em" id="em" required />
 	<label for="cem">Confirmation de l'adresse email</label><input type="email" placeholder="Confirmation de l'adresse email" name="cem" id="cem" required />
