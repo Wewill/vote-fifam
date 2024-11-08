@@ -9,6 +9,7 @@ $rep=$cbdd->query('SELECT * FROM films ');
 	}
 $rep->closeCursor();
 $rep=$cbdd->query('SELECT * FROM votes ');
+	$vote = [];
 	while ($donnees = $rep->fetch())
 	{
 	$vote[$donnees["id"]]=[$donnees["film"],$donnees["note"]];
