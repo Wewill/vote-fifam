@@ -52,8 +52,8 @@
 .icon-time:before {
   content: "\74";
 }
-.icon-vip:before {
-  content: "\76";
+.icon-guest:before {
+  content: "\67";
 }
 .icon-arrow:before {
   content: "\61";
@@ -90,26 +90,18 @@
 }
 .icon-vonst:before {
   content: "\4e";
-  font-size: 170%;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
 }
 .icon-vosta:before {
   content: "\41";
-  font-size: 170%;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
 }
 .icon-brochure:before {
-  content: "\42";
+  content: "\e000";
 }
 .icon-prev:before {
-  content: "\3c";
+  content: "\e001";
 }
 .icon-next:before {
-  content: "\3e";
+  content: "\e002";
 }
 .icon-up:before {
   content: "\e003";
@@ -124,7 +116,7 @@
   /*line-height: 0.1; Removed #42 since issue in related films UI */
 }
 .icon-left:before {
-  content: "\23";
+  content: "\e005";
   font-size: 3em;
   vertical-align: middle;
   line-height: 0.1;
@@ -138,107 +130,62 @@
   font-size: .85em;
 }
 .icon-links:before {
-  content: "\4c";
+  content: "\e008";
 }
 .icon-ok:before {
-  content: "\6c";
+  content: "\e009";
 }
 .icon-pic:before {
-  content: "\63";
+  content: "\e00a";
 }
 .icon-catalogue:before {
-  content: "\62";
+  content: "\e00b";
 }
 .icon-right-light:before {
-  content: "\22";
+  content: "\e00c";
 }
 .icon-left-light:before {
-  content: "\27";
+  content: "\e00d";
 }
 .icon-pin:before {
-  content: "\72";
+  content: "\e00e";
 }
 .icon-play:before {
-  content: "\70";
+  content: "\e00f";
 }
 .icon-download:before {
-  content: "\44";
+  content: "\e010";
 }
 .icon-down-right-light:before {
-  content: "\28";
+  content: "\e011";
   font-size: 65%;
 }
 .icon-down-left-light:before {
-  content: "\29";
+  content: "\e012";
 }
 .icon-right:before {
-  content: "\2a";
+  content: "\e013";
   font-size: 3em;
   vertical-align: middle;
   line-height: 0.1;
 }
 .icon-unlimited:before {
-  content: "\49";
+  content: "\e016";
 }
 .icon-ticket:before {
-  content: "\54";
+  content: "\e017";
 }
 .icon-mouse:before {
-  content: "\53";
+  content: "\e014";
 }
 .icon-flag:before {
-  content: "\66";
+  content: "\e015";
 }
 .icon-quote:before {
-  content: "\51";
+  content: "\e018";
 }
 .icon-plus:before {
-  content: "\2b";
+  content: "\e019";
   font-size: 95%;
   vertical-align: -.15rem;
-}
-.icon-mic:before {
-  content: "\6d";
-}
-.icon-guest:before {
-  content: "\67";
-}
-.icon-mic-alt:before {
-  content: "\4d";
-}
-.icon-gratuit:before {
-  content: "\31";
-}
-.icon-special:before {
-  content: "\32";
-}
-.icon-vo:before {
-  content: "\56";
-  top: 1px; /*#43*/
-  position: relative; /*#43*/
-}
-.icon-avantpremiere:before {
-  content: "\35";
-}
-.icon-premiereint:before {
-  content: "\36";
-}
-.icon-premierefr:before {
-  content: "\37";
-}
-.icon-premiere-1:before {
-  content: "\38";
-}
-.icon-vosta-2:before {
-  content: "\4f";
-  font-size: 170%;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-}
-.icon-premiere:before {
-  content: "\39";
-}
-.icon-premiere-2:before {
-  content: "\30";
 }
