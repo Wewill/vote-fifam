@@ -13,12 +13,10 @@ $men=1;
 		<title>Les films — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
-<?php include('header.php'); ?>
-	
+	<?php include('header.php'); ?>
 	<article>
+	<h4>Liste des films en compétition <a href="aj-f.php" id="aj" ><i class="icon icon-plus"></i></a></h4>
 	<br/>
-	Liste des films en compétition <a href="aj-f.php" id="aj" >&#9998;</a>
-	<br/><br/>
 	<table>
 	<tr><th>Film</th><th>Réalisateur</th><th>Année</th><th>&nbsp;</th></tr><?php
 $rep=$cbdd->query('SELECT * FROM films ORDER BY nom,ann');

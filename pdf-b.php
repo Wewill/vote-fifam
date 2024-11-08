@@ -36,31 +36,30 @@ $rep->closeCursor();
 <?php include('header.php'); ?>
 	
 	<article>
+	<h4>Liste des billets</h4>
 	<br/>
-	Liste des billets
-	<br/><br/>
 	<table>
 	<tr><th>Film</th><th>Billets</th><th>Série</th><th>Nb</th><th>&nbsp;</th></tr>
 	<?php
-$nb=0;
-echo(''.$snc.'<tr><td>'.$film.'</td><td class="mini" >');
-$x=0;
-$rep=$cbdd->query('SELECT * FROM tickets WHERE snc='.$_GET['id'].' AND val=1 ORDER BY nno');
-		while ($donnees = $rep->fetch())
-		{
-		$x++;
-		if ($x%6==0) {$sep="<br/>";} else {$sep=" | ";}
-		echo(''.$donnees["code"].$sep.'');
-		$serie=$donnees["serie"];
-		$der=$donnees["nno"];
-		$val=$donnees["val"];
-		$nb++;
-		}
-	$rep->closeCursor();
-	if ($val<2) {$impr='<a href="impr-t.php?s='.$_GET['id'].'" target="_blank" onclick="return confirm(\'Je confirme la création du PDF des bulletins de vote.\')" >&#128424;</a>';}
-	if ($serie=='') {$serie='<input type="text" name="" maxlength="2" required />';}
-	echo('</td><td>'.$serie.'</td><td>'.$nb.' / '.($nb+$nbil).'</td><td class="fin" >'.$impr.'<br/><a href="plus-t.php?s='.$_GET['id'].'" onclick="return confirm(\'Je confirme la création de 12 bulletins de vote.\')" >&#10798;</a></td><tr>');
-?>
+	$nb=0;
+	echo(''.$snc.'<tr><td>'.$film.'</td><td class="mini" >');
+	$x=0;
+	$rep=$cbdd->query('SELECT * FROM tickets WHERE snc='.$_GET['id'].' AND val=1 ORDER BY nno');
+			while ($donnees = $rep->fetch())
+			{
+			$x++;
+			if ($x%6==0) {$sep="<br/>";} else {$sep=" | ";}
+			echo(''.$donnees["code"].$sep.'');
+			$serie=$donnees["serie"];
+			$der=$donnees["nno"];
+			$val=$donnees["val"];
+			$nb++;
+			}
+		$rep->closeCursor();
+		if ($val<2) {$impr='<a href="impr-t.php?s='.$_GET['id'].'" target="_blank" onclick="return confirm(\'Je confirme la création du PDF des bulletins de vote.\')" >&#128424;</a>';}
+		if ($serie=='') {$serie='<input type="text" name="" maxlength="2" required />';}
+		echo('</td><td>'.$serie.'</td><td>'.$nb.' / '.($nb+$nbil).'</td><td class="fin" >'.$impr.'<br/><a href="plus-t.php?s='.$_GET['id'].'" onclick="return confirm(\'Je confirme la création de 12 bulletins de vote.\')" >&#10798;</a></td><tr>');
+	?>
 	</table>
 	<br/>
 	<input type="hidden" value="<?php echo($_GET["id"]); ?>" name="id" />

@@ -25,21 +25,20 @@ $rep=$cbdd->query('SELECT * FROM films ');
 		<title>Les séances — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
-<?php include('header.php'); ?>
+	<?php include('header.php'); ?>
 	<article>
-<br/>
-Liste des séances <a href="aj-s.php" id="aj" >&#9998;</a>
-<br/><br/>
+	<h4>Liste des séances <a href="aj-s.php" id="aj" ><i class="icon icon-plus"></i></a></h4>
+	<br/>
 	<table>
 	<tr><th>Date</th><th>Séance</th><th>Film</th><th>Cinéma</th><th>&nbsp;</th></tr>
-<?php
-$rep=$cbdd->query('SELECT * FROM seances ORDER BY dte ');
-		while ($donnees = $rep->fetch())
-		{
-		echo('<tr><td>'.strftime("%A<br/>%d<br/>%B", strtotime($donnees["dte"])).'</td><td>'.strftime("%kh%M", strtotime($donnees["deb"])).'<br/>&#128499;</td><td>'.$film[$donnees["film"]].'</td><td>'.$salle[$donnees["sal"]].'</td><td class="fin" ><a href="moins-s.php?id='.$donnees["id"].'" >&#9447;</a><br/><a href="mod-s.php?id='.$donnees["id"].'&f='.$donnees["film"].'&s='.$donnees["sal"].'" >&#9998;</a><br/><a href="pdf-b.php?id='.$donnees["id"].'" >&#127903;</a></td></tr>');
-		}
-	$rep->closeCursor();
-?>
+	<?php
+	$rep=$cbdd->query('SELECT * FROM seances ORDER BY dte ');
+			while ($donnees = $rep->fetch())
+			{
+			echo('<tr><td>'.strftime("%A<br/>%d<br/>%B", strtotime($donnees["dte"])).'</td><td>'.strftime("%kh%M", strtotime($donnees["deb"])).'<br/><i class="icon icon-download"></i></td><td>'.$film[$donnees["film"]].'</td><td>'.$salle[$donnees["sal"]].'</td><td class="fin" ><a href="moins-s.php?id='.$donnees["id"].'" >&#9447;</a><br/><a href="mod-s.php?id='.$donnees["id"].'&f='.$donnees["film"].'&s='.$donnees["sal"].'" >&#9998;</a><br/><a href="pdf-b.php?id='.$donnees["id"].'" ><i class="icon icon-ticket"></i></a></td></tr>');
+			}
+		$rep->closeCursor();
+	?>
 	</table>
 	</article>
 	<br/><br/>
