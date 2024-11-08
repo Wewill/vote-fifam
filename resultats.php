@@ -25,25 +25,24 @@ $rep->closeCursor();
 		<title>Résultats des votes — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
-<?php include('header.php'); ?>
+	<?php include('header.php'); ?>
 	<article>
-<br/>
-Résultats des votes
-<br/><br/>
-<table>
-<?php
-$k=0;
-foreach ($film as $keyf => $valuef)
-	{
-	echo('<tr id="lcl'.$keyf.'" ><td>'.$valuef.'</td>');
-	$vt[$keyf]=0;$nb[$keyf]=0;
-	foreach ($vote as $key => $value)
+	<h2>Résultats des votes</h2>
+	<br/>
+	<table>
+	<?php
+	$k=0;
+	foreach ($film as $keyf => $valuef)
 		{
-		if ($value[0]==$keyf) {$vt[$keyf]+=$value[1];$nb[$keyf]++;}
+		echo('<tr id="lcl'.$keyf.'" ><td>'.$valuef.'</td>');
+		$vt[$keyf]=0;$nb[$keyf]=0;
+		foreach ($vote as $key => $value)
+			{
+			if ($value[0]==$keyf) {$vt[$keyf]+=$value[1];$nb[$keyf]++;}
+			}
+		if ($nb[$keyf]!=0) {echo('<td>'.number_format($vt[$keyf]/$nb[$keyf],2,',','').' / 5<br/>(avec '.$nb[$keyf].' votants)</td></tr>'."\n");if (($vt[$keyf]/$nb[$keyf])>$k) {$k=($vt[$keyf]/$nb[$keyf]);$tr=$keyf;}} else {echo('<td>Pas encore noté</td></tr>'."\n");}
 		}
-	if ($nb[$keyf]!=0) {echo('<td>'.number_format($vt[$keyf]/$nb[$keyf],2,',','').' / 5<br/>(avec '.$nb[$keyf].' votants)</td></tr>'."\n");if (($vt[$keyf]/$nb[$keyf])>$k) {$k=($vt[$keyf]/$nb[$keyf]);$tr=$keyf;}} else {echo('<td>Pas encore noté</td></tr>'."\n");}
-	}
-?>
+	?>
 	</table>
 	</article>
 	<br/><br/>
