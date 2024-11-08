@@ -17,10 +17,10 @@ $men=2;
 	<article>
 	<form method="post" action="enr-c.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point d'ajouter<br/>une salle dans la liste.
+	<small class="muted">Attention ! Je suis sur le point d'ajouter une salle dans la liste.</small>
 	<br/><br/>
 	<table>
-	<tr><th>Cinéma</th><th>salle</th></tr>
+	<tr><th>Cinéma</th><th>Salle</th></tr>
 	<tr><td><input type="text" value="" name="cine" /></td><td><input type="text" value="" name="nom" /></td></tr>
 	</table>
 	<br/>

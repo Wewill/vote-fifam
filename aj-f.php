@@ -17,7 +17,7 @@ $men=1;
 	<article>
 	<form method="post" action="enr-f.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point d'ajouter<br/>un film dans la liste.
+	<small class="muted">Attention ! Je suis sur le point d'ajouter un film dans la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Film</th><th>Réalisateur</th><th>Année</th></tr>

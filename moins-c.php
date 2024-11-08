@@ -23,7 +23,7 @@ $rep->closeCursor();
 	<article>
 	<form method="post" action="suppr-c.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point de<br/>supprimer cette salle de la liste.
+	<small class="muted">Attention ! Je suis sur le point de supprimer cette salle de la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Cinéma</th><th>salle</th></tr>

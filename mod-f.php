@@ -24,7 +24,7 @@ $rep->closeCursor();
 	<article>
 	<form method="post" action="upd-f.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point de<br/>modifier ce film dans la liste.
+	<small class="muted">Attention ! Je suis sur le point de modifier ce film dans la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Film</th><th>Réalisateur</th><th>Année</th></tr>

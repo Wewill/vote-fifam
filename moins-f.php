@@ -29,7 +29,7 @@ $rep->closeCursor();
 	<article>
 	<form method="post" action="suppr-f.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point de<br/>supprimer ce film de la liste.
+	<small class="muted">Attention ! Je suis sur le point de supprimer ce film de la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Film</th><th>Réalisateur</th><th>Année</th></tr>

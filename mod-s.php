@@ -44,7 +44,7 @@ $film.='</select>';
 	<article>
 	<form method="post" action="upd-s.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point de<br/>modifier cette séance dans la liste.
+	<small class="muted">Attention ! Je suis sur le point de modifier cette séance dans la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Séance</th><th>Film / Salle</th></tr>

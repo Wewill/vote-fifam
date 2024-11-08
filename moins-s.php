@@ -35,7 +35,7 @@ $rep=$cbdd->query('SELECT * FROM films ');
 	<article>
 	<form method="post" action="suppr-s.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point de<br/>supprimer cette séance de la liste.
+	<small class="muted">Attention ! Je suis sur le point de supprimer cette séance de la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Date</th><th>Séance</th><th>Film</th><th>Cinéma</th></tr>

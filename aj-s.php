@@ -41,7 +41,7 @@ $film.='</select>';
 	<article>
 	<form method="post" action="enr-s.php" >
 	<br/>
-	Attention !<br/>Je suis sur le point d'ajouter<br/>une séance dans la liste.
+	<small class="muted">Attention ! Je suis sur le point d'ajouter une séance dans la liste.</small>
 	<br/><br/>
 	<table>
 	<tr><th>Séance</th><th>Film</th></tr>

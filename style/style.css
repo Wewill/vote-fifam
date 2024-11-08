@@ -56,6 +56,9 @@ a:hover, td.fin a:hover, a#aj:hover
 .current {
 	color:rgb(0, 255, 151) !important;
 }
+small {
+	font-size: 50%;
+}
 a.home
 {
 	filter: grayscale(1);
