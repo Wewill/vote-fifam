@@ -19,10 +19,10 @@ else if ($_SESSION["code"]!="") {header('Location:vote.php');}
 		<title>Vote du public — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
-<?php include('header.php'); ?>
+	<?php include('header.php'); ?>
 	<article>
-	<br/><img src="img/logocolor.svg" /><br/>
-<?php if (isset($_SESSION['em'])) {echo('<p style="color:red;" >Allez consulter l\'adresse mail :<br/>'.$_SESSION['em'].'<br/>pour valider votre inscription</p>');unset($_SESSION['em']);} ?>
+	<br/><img src="img/Logotype_fifam_plein.svg" height="190" alt="Logotype FIFAM"/>
+	<?php if (isset($_SESSION['em'])) {echo('<p class="muted" >Allez consulter l\'adresse mail :<br/>'.$_SESSION['em'].'<br/>pour valider votre inscription</p>');unset($_SESSION['em']);} ?>
 	<br/>
 	<h1>Bienvenue sur le site <br/>du vote du public <br/>du 44<sup>e</sup> Festival International<br/>du Film d'Amiens <?php echo(date("Y")); ?></h1>
 	</article>
