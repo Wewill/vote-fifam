@@ -33,14 +33,14 @@ $rep->closeCursor();
 	<br/><br/>
 	<table>
 	<tr><th>Film</th><th>Réalisateur</th><th>Année</th></tr>
-<?php 
-$rep=$cbdd->query('SELECT * FROM films WHERE id='.$_GET["id"].' ');
+	<?php 
+		$rep=$cbdd->query('SELECT * FROM films WHERE id='.$_GET["id"].' ');
 		while ($donnees = $rep->fetch())
 		{
 		echo('<tr><td>'.$donnees["nom"].'</td><td>'.$donnees["ral"].'</td><td>'.$donnees["ann"].'</td></tr>');
 		}
-	$rep->closeCursor();
-?>
+		$rep->closeCursor();
+	?>
 	</table>
 	<br/>
 	<input type="hidden" value="<?php echo($_GET["id"]); ?>" name="id" />

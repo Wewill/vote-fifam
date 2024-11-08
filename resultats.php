@@ -33,15 +33,19 @@ $rep->closeCursor();
 	<table>
 	<?php
 	$k=0;
-	foreach ($film as $keyf => $valuef)
-		{
-		echo('<tr id="lcl'.$keyf.'" ><td>'.$valuef.'</td>');
-		$vt[$keyf]=0;$nb[$keyf]=0;
-		foreach ($vote as $key => $value)
+	if ( !empty($film) ) {
+		foreach ($film as $keyf => $valuef)
 			{
-			if ($value[0]==$keyf) {$vt[$keyf]+=$value[1];$nb[$keyf]++;}
+			echo('<tr id="lcl'.$keyf.'" ><td>'.$valuef.'</td>');
+			$vt[$keyf]=0;$nb[$keyf]=0;
+			foreach ($vote as $key => $value)
+				{
+				if ($value[0]==$keyf) {$vt[$keyf]+=$value[1];$nb[$keyf]++;}
+				}
+			if ($nb[$keyf]!=0) {echo('<td>'.number_format($vt[$keyf]/$nb[$keyf],2,',','').' / 5<br/>(avec '.$nb[$keyf].' votants)</td></tr>'."\n");if (($vt[$keyf]/$nb[$keyf])>$k) {$k=($vt[$keyf]/$nb[$keyf]);$tr=$keyf;}} else {echo('<td>Pas encore noté</td></tr>'."\n");}
 			}
-		if ($nb[$keyf]!=0) {echo('<td>'.number_format($vt[$keyf]/$nb[$keyf],2,',','').' / 5<br/>(avec '.$nb[$keyf].' votants)</td></tr>'."\n");if (($vt[$keyf]/$nb[$keyf])>$k) {$k=($vt[$keyf]/$nb[$keyf]);$tr=$keyf;}} else {echo('<td>Pas encore noté</td></tr>'."\n");}
+		} else {
+			echo '<small>Il n\'y a pas de films.</small>';
 		}
 	?>
 	</table>
