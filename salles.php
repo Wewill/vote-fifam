@@ -14,20 +14,11 @@ $men=2;
 	</head>
 	<body>
 	<?php include('header.php'); ?>
-	<?php include('header.php'); ?>
 	<article>
 	<h4>Liste des salles de projection <a href="aj-c.php" id="aj" ><i class="icon icon-plus"></i></a></h4>
 	<br/>
 	<table>
 	<tr><th>Cinéma</th><th>Salle</th><th>&nbsp;</th></tr>
-	<?php
-	$rep=$cbdd->query('SELECT * FROM salle ORDER BY cine,nom ');
-			while ($donnees = $rep->fetch())
-			{
-			echo('<tr><td>'.$donnees["cine"].'</td><td>'.$donnees["nom"].'</td><td class="fin" ><a href="moins-c.php?id='.$donnees["id"].'" >&#9447;</a>&nbsp;<a href="mod-c.php?id='.$donnees["id"].'" >&#9998;</a></td></tr>');
-			}
-		$rep->closeCursor();
-	?>
 	<?php
 	$rep=$cbdd->query('SELECT * FROM salle ORDER BY cine,nom ');
 			while ($donnees = $rep->fetch())
