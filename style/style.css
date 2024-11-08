@@ -49,6 +49,9 @@ a:hover, td.fin a:hover, a#aj:hover
 {
 	color:rgb(108, 117, 125);
 }
+.muted {
+	color:rgb(108, 117, 125);
+}
 a.home
 {
 	filter: grayscale(1);
