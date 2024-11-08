@@ -24,10 +24,7 @@ else if ($_SESSION["code"]!="") {header('Location:vote.php');}
 	<br/><img src="img/logocolor.svg" /><br/>
 <?php if (isset($_SESSION['em'])) {echo('<p style="color:red;" >Allez consulter l\'adresse mail :<br/>'.$_SESSION['em'].'<br/>pour valider votre inscription</p>');unset($_SESSION['em']);} ?>
 	<br/>
-	Bienvenue sur le site
-	<br/>du vote du public
-	<br/>
-	du 44<sup>e</sup> Festival International<br/>du Film d'Amiens <?php echo(date("Y")); ?>
+	<h1>Bienvenue sur le site <br/>du vote du public <br/>du 44<sup>e</sup> Festival International<br/>du Film d'Amiens <?php echo(date("Y")); ?></h1>
 	</article>
 	</body>
 </html>
