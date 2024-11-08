@@ -28,6 +28,7 @@ div.avert
 	position: -o-sticky;
 	position: sticky;
 	top:0px;
+	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
 body
 {
@@ -52,6 +53,9 @@ a:hover, td.fin a:hover, a#aj:hover
 .muted {
 	color:rgb(108, 117, 125);
 }
+.current {
+	color:rgb(0, 255, 151) !important;
+}
 a.home
 {
 	filter: grayscale(1);
@@ -60,7 +64,7 @@ a.home:hover
 {
 	filter: grayscale(0);
 }
-h2, h3, h4 {
+h2, h3, h4, th {
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
 span.frm
@@ -221,4 +225,9 @@ img.vt
 	width:18vw;
 	height:18vw;
 	margin:0;
+}
+.icons {
+	color: white;
+	font-size: max(2.3vw,2.3vh);
+	vertical-align: middle;
 }
