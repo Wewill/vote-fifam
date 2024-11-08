@@ -14,11 +14,11 @@ if ($vrif=="OK")
 	$cbdd->query('UPDATE pub SET vrf='.$val.' WHERE id='.$id.' ');
 	$from = "vote@fifam.fr"; 
 	$to = $_POST['em1'];
-	$subject = "[FIFAm] Initialisation de mot de passe";
+	$subject = "[FIFAM] Réinitialisation du mot de passe";
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
 	$headers .= 'From: <'.$from."\r\n".'>Reply-To: <'.$from.">\r\nTo: <".$to.">\r\n".'X-Mailer: PHP/'.phpversion();
-	$msg="Bonjour ".$pnm.",<br/><br/>Vous avez demandé la réinitialsation de votre mot de passe du site du vote du public du FIFAm.<br/>Pour cela il vous faut cliquer sur le lien ci dessous :<br/>".'<a href="https://vote.fifam.fr/mod-mdp.php?q='.$id.'&v='.$val.'" />https://vote.fifam.fr/mod-mdp.php?q='.$id.'&v='.$val.'</a><br/><br/>Si vous n\'êtes pas à l\'origine de cette demande, aucune modification ne sera effectuée sur votre compte.<br/><br/>Bon festival !';
+	$msg="Bonjour ".$pnm.",<br/><br/>Vous avez demandé la réinitialsation de votre mot de passe du site du vote du public du FIFAM.<br/>Pour cela il vous faut cliquer sur le lien ci dessous :<br/>".'<a href="https://vote.fifam.fr/mod-mdp.php?q='.$id.'&v='.$val.'" />https://vote.fifam.fr/mod-mdp.php?q='.$id.'&v='.$val.'</a><br/><br/>Si vous n\'êtes pas à l\'origine de cette demande, aucune modification ne sera effectuée sur votre compte.<br/><br/>Bon festival !';
 	mail($to,$subject,$msg, $headers);	
 	$_SESSION['em']=$_POST['em1'];
 	header('Location:index.php');

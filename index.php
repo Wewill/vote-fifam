@@ -15,8 +15,8 @@ else if ($_SESSION["code"]!="") {header('Location:vote.php');}
 		<meta name="ROBOTS" content="all" />
 		<meta name="revised" content="<?php echo(date("Y-m-d")); ?>" />
 		<meta name="keywords" content="FIFAM,Festival,International,Film,Amiens,<?php echo(date("Y")); ?>,vote,public,iszir" />
-		<meta name="description" content="Retrouvez ici le travail des élèves du lycée Edouard Branly d'Amiens. Collecte du vote du public du FIFAm <?php echo(date("Y")); ?>" />
-		<title>FIFAm : vote du public</title>
+		<meta name="description" content="Retrouvez ici le travail des élèves du lycée Edouard Branly d'Amiens. Collecte du vote du public du FIFAM <?php echo(date("Y")); ?>" />
+		<title>Vote du public — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>
@@ -27,7 +27,7 @@ else if ($_SESSION["code"]!="") {header('Location:vote.php');}
 	Bienvenue sur le site
 	<br/>du vote du public
 	<br/>
-	du <span class="initt" >44</span><sup>e</sup> <span class="initt" >F</span>estival <span class="initt" >I</span>nternational<br/>du <span class="initt" >F</span>ilm d'<span class="initt" >Am</span>iens <span class="initt" ><?php echo(date("Y")); ?></span>
+	du 44<sup>e</sup> Festival International<br/>du Film d'Amiens <?php echo(date("Y")); ?>
 	</article>
 	</body>
 </html>

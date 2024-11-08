@@ -12,8 +12,8 @@ $men=5;
 		<meta name="ROBOTS" content="all" />
 		<meta name="revised" content="<?php echo(date("Y-m-d")); ?>" />
 		<meta name="keywords" content="FIFAM,Festival,International,Film,Amiens,2023,vote,public,iszir" />
-		<meta name="description" content="Retrouvez ici le travail des élèves du lycée Edouard Branly d'Amiens. Collecte du vote du public du FIFAm 2023" />
-		<title>FIFAm : vote du public</title>
+		<meta name="description" content="Retrouvez ici le travail des élèves du lycée Edouard Branly d'Amiens. Collecte du vote du public du FIFAM 2023" />
+		<title>Vote du public — FIFAM | Festival International du Film d'Amiens</title>
 	</head>
 	<body>
 <?php include('header.php'); ?>
