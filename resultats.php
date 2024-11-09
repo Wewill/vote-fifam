@@ -3,6 +3,7 @@ include('BdD.php');
 if ($_SESSION["qui"]!=0) {header('Location:index.php');}
 $men=4;
 $rep=$cbdd->query('SELECT * FROM films ');
+	$film = [];
 	while ($donnees = $rep->fetch())
 	{
 	$film[$donnees["id"]]='"'.$donnees["nom"].'"<br/>de '.$donnees["ral"].'<br/>('.$donnees["ann"].')';
