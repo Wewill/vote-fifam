@@ -28,13 +28,14 @@ if ($film=='')
 		$c2=$donnees["val"];
 		$c2++;
 		if ($c2==91) {$c2=65;$c1++;}
-		$film=''.chr($c1).chr($c2).'';
-		}
+		$film=''.chr($c1+65).chr($c2).''; // +65
+ 		}
 	$rep->closeCursor();
 	$cbdd->query('UPDATE tickets SET film='.$c1.', val='.$c2.' WHERE id=0 ');
 	}
 for ($x=0;$x<12;$x++) 
 	{
+	//die(var_dump($film));
 	$code=substr(str_shuffle("abcdefghijkmnopqrstuvwxyz123456789ABCDEFGHJKLMNPQRSTUVWXYZ"),0,6);
 	$nume=substr('000'.($nno+$x).'',-4);
 	QRcode::png('https://vote.fifam.fr?n='.$film.'-'.$nume.'-'.$code.'','qr/'.$film.'-'.$nume.'.png','H',5,4);
