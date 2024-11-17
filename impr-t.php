@@ -14,7 +14,7 @@ $ann=$donnees["ann"];
 $rep->closeCursor();
 require('../fpdf2/fpdf.php');
 ob_get_clean();
-$pdf = new FPDF();
+$pdf = new FPDF('P', 'mm', array(210, 297));
 $pdf->SetMargins(0, 0);
 $pdf->SetTextColor(0, 0, 0);
 $pdf->SetFont('Arial','B',9.5);
