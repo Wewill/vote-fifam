@@ -51,7 +51,9 @@ $rep->closeCursor();
 	?>
 	</table>
 	</article>
-	<br/><br/>
+	<br/>
+	<h2 style="text-align:center;"><a href="impr-votes.php" target="_blank" style="color:black;">Télécharger les billets des votants (*.pdf)</a></h2>
+	<br/>
 	</body>
 <script type="text/javascript" >
 document.getElementById('lcl<?php echo($tr); ?>').style.backgroundColor="#DDFFDD";

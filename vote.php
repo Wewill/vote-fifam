@@ -37,6 +37,7 @@ $rep=$cbdd->query('SELECT id FROM votes WHERE qui='.$_SESSION['qui'].' AND film=
 	header('location:err.php');
 	}
 $rep->closeCursor();
+if (intval(date("YmdGi"))>=202411221200) {$_SESSION['err']="Le vote pour cette 44e édition est clos.";header('location:err.php');}
 }
 ?>
 <!DOCTYPE html>
