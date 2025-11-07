@@ -43,7 +43,8 @@ $rep=$cbdd->query('SELECT * FROM tickets WHERE snc="'.$_GET['s'].'" AND val=1 OR
 		$pdf->Cell(85,5,'de '.iconv('UTF-8', 'ISO-8859-1//TRANSLIT',html_entity_decode($ral)).' ('.$ann.')',0,1,'C');
 		$pdf->Image('qr/'.$donnees["serie"].'-'.$nume.'.png', 68+$pls, (floor($tr/2)*148.5+28), -250);
 		$pdf->Image('img/liqrn.png', 74.5+$pls, (floor($tr/2)*148.5+34.5), -860);
-		$pdf->Image('img/t-lico.jpg', 10+$pls, (floor($tr/2)*148.5+8), -400);
+		//$pdf->Image('img/t-lico.jpg', 10+$pls, (floor($tr/2)*148.5+8), -400);
+		$pdf->Image('img/t-lico-'.(date("Y") - 1980).'.jpg', 10+$pls, (floor($tr/2)*148.5+8), -400); // ex: t-lico-44.jpg, t-lico-45.jpg ...
 		for ($x=0;$x<5;$x++)
 			{
 			$pdf->Image('img/logolico.png', 16+$pls+($x*15), (floor($tr/2)*148.5+75-($x*0.85)), (-2400+($x*200)));
