@@ -1,11 +1,12 @@
 <?php
 include('BdD.php');
 $men=10;
-$rep=$cbdd->query('SELECT nm,pre FROM pub WHERE id='.$_SESSION["qui"].' ');
+$rep=$cbdd->query('SELECT nm,pre,eml FROM pub WHERE id='.$_SESSION["qui"].' ');
 		while ($donnees = $rep->fetch())
 		{
 		$nom=$donnees["nm"];
 		$pre=$donnees["pre"];
+		$email=$donnees["eml"];
 		}
 	$rep->closeCursor();
 ?>
@@ -24,7 +25,8 @@ $rep=$cbdd->query('SELECT nm,pre FROM pub WHERE id='.$_SESSION["qui"].' ');
 	<h2>Mon profil</h2>
 	<span class="frm">
 	<form method="post" action="modp.php" >
-	<?php echo(decrypt($pre,$clef).' '.decrypt($nom,$clef)); ?>
+	<?php echo(decrypt($pre,$clef).' '.decrypt($nom,$clef)); ?><br/>
+	<?php echo(decrypt($email,$clef)); ?>
 	</form>
 	</span>
 	<br/><br/><br/><br/>
