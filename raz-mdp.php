@@ -23,12 +23,11 @@ if ($vrif=="OK")
 	$msg="Bonjour ".$pnm.",<br/><br/>Vous avez demandé la réinitialsation de votre mot de passe du site du vote du public du FIFAM.<br/>Pour cela il vous faut cliquer sur le lien ci dessous :<br/>".'<a href="https://vote.fifam.fr/mod-mdp.php?q='.$id.'&v='.$val.'" />https://vote.fifam.fr/mod-mdp.php?q='.$id.'&v='.$val.'</a><br/><br/>Si vous n\'êtes pas à l\'origine de cette demande, aucune modification ne sera effectuée sur votre compte.<br/><br/>Bon festival !';
 	$mail_sent=mail($to,$subject,$msg, $headers);
 	if ($mail_sent) {
-		$_SESSION['Message']='<div class="valid" >Un e-mail de réinitialisation vous a été envoyé. Merci de vérifier votre boîte de réception et vos spams.</div>';
+		$_SESSION['Message']='<div class="valid" >Un e-mail de réinitialisation vous a été envoyé à l\'adresse <strong>'.$_POST['em1'].'</strong>.<br/>Merci de vérifier votre boîte de réception et vos spams.</div>';
 	} else {
 		$_SESSION['Message']='<div class="avert" >Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Veuillez réessayer.</div>';
 	}
-	$_SESSION['em']=$_POST['em1'];
-	header('Location:index.php');
+	header('Location:dem-mdp.php');
 	}
 else
 	{
