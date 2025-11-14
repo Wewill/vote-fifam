@@ -75,6 +75,9 @@ a.home:hover
 h2, h3, h4, th {
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
+th {
+	font-size: 0.7em;
+}
 span.frm
 {
 	display:inline-block;
@@ -168,13 +171,13 @@ span.frm
 }
 table
 {
-	font-size:max(2vw,2vh);
+	font-size:max(1.6vw,1.6vh);
 	margin:auto;
 }
 td,th
 {
-	padding-left:0.5vw;
-	padding-right:0.5vw;
+	padding-left:0.3vw;
+	padding-right:0.3vw;
 }
 img#prfl
 {
@@ -238,4 +241,59 @@ img.vt
 	color: white;
 	font-size: max(2.3vw,2.3vh);
 	vertical-align: middle;
+}
+
+/* Statistiques utilisateurs */
+.stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 15px;
+	margin: 20px 0;
+}
+.stat-box {
+	background: #f5f5f5;
+	padding: 15px;
+	border-radius: 8px;
+	text-align: center;
+	border-left: 4px solid #333;
+}
+.stat-box.actif {
+	border-left-color: #28a745;
+}
+.stat-box.attente {
+	border-left-color: #ffc107;
+}
+.stat-box.vote {
+	border-left-color: #007bff;
+}
+.stat-box.non-vote {
+	border-left-color: #dc3545;
+}
+.stat-number {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 5px 0;
+}
+.stat-label {
+	font-size: 0.7em;
+	color: #666;
+	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
+}
+.status-oui {
+	font-size: 0.7em;
+	color: #28a745;
+	font-weight: bold;
+	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
+}
+.status-non {
+	font-size: 0.7em;
+	color: #dc3545;
+	font-weight: bold;
+	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
+}
+.status-attente {
+	font-size: 0.7em;
+	color: #ffc107;
+	font-weight: bold;
+	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
