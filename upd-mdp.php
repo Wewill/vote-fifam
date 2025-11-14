@@ -17,7 +17,7 @@ if (nty($_POST['cmdp'])==nty($_POST['mdp']) && $id==$_POST['id'])
 	$subject = "[FIFAM] Mot de passe modifié";
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
-	$headers .= 'From: <'.$from."\r\n".'>Reply-To: <'.$from.">\r\nTo: <".$to.">\r\n".'X-Mailer: PHP/'.phpversion();
+	$headers .= 'From: "Fifam" <'.$from.">\r\n".'Reply-To: <'.$from.">\r\nTo: <".$to.">\r\n".'X-Mailer: PHP/'.phpversion();
 	$msg="Bonjour ".$pnm.",<br/><br/>Votre mot de passe du site du vote du public du FIFAM a bien été modifié.<br/>Vous pouvez vous connecte avec en cliquant sur le lien ci-dessous :<br/>".'<a href="https://vote.fifam.fr/coin.php" />https://vote.fifam.fr/coin.php</a><br/><br/>Bon festival !';
 	mail($to,$subject,$msg, $headers);
 	$_SESSION['em']=$em;
