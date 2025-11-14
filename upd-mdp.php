@@ -25,12 +25,12 @@ if (nty($_POST['cmdp'])==nty($_POST['mdp']) && $id==$_POST['id'])
 	$headers .= 'Message-ID: <'.time().'-'.$id.'@vote.fifam.fr>'."\r\n";
 	$msg='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">';
 	$msg.='<div style="max-width: 600px; margin: 0 auto; padding: 20px;">';
-	$msg.='<h2 style="color: #0066cc;">FIFAM - Mot de passe modifié</h2>';
+	$msg.='<h2 style="color: rgb(108, 117, 125);">FIFAM - Mot de passe modifié</h2>';
 	$msg.='<p>Bonjour '.$pnm.',</p>';
 	$msg.='<p>Votre mot de passe du site du vote du public du FIFAM a bien été modifié.</p>';
 	$msg.='<p>Vous pouvez maintenant vous connecter en cliquant sur le lien ci-dessous :</p>';
-	$msg.='<p style="margin: 20px 0;"><a href="https://vote.fifam.fr/coin.php" style="background-color: #0066cc; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Se connecter</a></p>';
-	$msg.='<p>Ou copiez ce lien dans votre navigateur :<br/><span style="color: #0066cc;">https://vote.fifam.fr/coin.php</span></p>';
+	$msg.='<p style="margin: 20px 0;"><a href="https://vote.fifam.fr/coin.php" style="background-color: rgb(108, 117, 125); color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Se connecter</a></p>';
+	$msg.='<p>Ou copiez ce lien dans votre navigateur :<br/><span style="color: rgb(108, 117, 125);">https://vote.fifam.fr/coin.php</span></p>';
 	$msg.='<p style="color: #666; font-size: 0.9em;">Si vous n\'êtes pas à l\'origine de cette modification, veuillez contacter l\'administrateur immédiatement.</p>';
 	$msg.='<p>Bon festival !</p>';
 	$msg.='<hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">';

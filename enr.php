@@ -38,12 +38,12 @@ if (nty($_POST['cmdp'])==nty($_POST['mdp']) & $_POST['cem']==$_POST['em'] & nty(
 	$headers .= 'Message-ID: <'.time().'-'.$id.'@vote.fifam.fr>'."\r\n";
 	$msg='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">';
 	$msg.='<div style="max-width: 600px; margin: 0 auto; padding: 20px;">';
-	$msg.='<h2 style="color: #0066cc;">FIFAM - Confirmation d\'inscription</h2>';
+	$msg.='<h2 style="color: rgb(108, 117, 125);">FIFAM - Confirmation d\'inscription</h2>';
 	$msg.='<p>Bonjour '.$_POST['pnm'].',</p>';
 	$msg.='<p>Vous êtes sur le point de finaliser votre inscription pour participer au vote du public du FIFAM.</p>';
 	$msg.='<p>Pour activer votre compte, veuillez cliquer sur le lien ci-dessous :</p>';
-	$msg.='<p style="margin: 20px 0;"><a href="https://vote.fifam.fr/valenr.php?q='.$id.'&v='.$val.'" style="background-color: #0066cc; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Activer mon compte</a></p>';
-	$msg.='<p>Ou copiez ce lien dans votre navigateur :<br/><span style="color: #0066cc;">https://vote.fifam.fr/valenr.php?q='.$id.'&v='.$val.'</span></p>';
+	$msg.='<p style="margin: 20px 0;"><a href="https://vote.fifam.fr/valenr.php?q='.$id.'&v='.$val.'" style="background-color: rgb(108, 117, 125); color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Activer mon compte</a></p>';
+	$msg.='<p>Ou copiez ce lien dans votre navigateur :<br/><span style="color: rgb(108, 117, 125);">https://vote.fifam.fr/valenr.php?q='.$id.'&v='.$val.'</span></p>';
 	$msg.='<p style="color: #666; font-size: 0.9em;">Si vous n\'êtes pas à l\'origine de cette demande, ne cliquez pas sur le lien et votre email sera effacé automatiquement de notre base.</p>';
 	$msg.='<p>Bon festival !</p>';
 	$msg.='<hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">';
