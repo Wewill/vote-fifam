@@ -22,6 +22,7 @@ else if ($_SESSION["code"]!="") {header('Location:vote.php');}
 	<body>
 	<?php include('header.php'); ?>
 	<article>
+	<?php echo($_SESSION['Message']);$_SESSION['Message']="" ?>
 	<br/><img src="img/Logotype_fifam_plein.svg" height="190" alt="Logotype FIFAM"/>
 	<?php if (isset($_SESSION['em'])) {echo('<p class="muted" >Allez consulter l\'adresse mail :<br/>'.$_SESSION['em'].'<br/>pour valider votre inscription</p>');unset($_SESSION['em']);} ?>
 	<br/>

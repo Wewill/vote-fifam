@@ -16,10 +16,12 @@ if ($vrif=="OK")
 	{
 	$cbdd->query('UPDATE pub SET vrf=0, act=1 WHERE id='.$_GET['q'].' ');
 	$_SESSION["qui"]="".$id."";
+	$_SESSION['Message']='<div class="valid" >Votre compte est maintenant activé ! Vous pouvez désormais participer au vote du public.</div>';
 	header('Location:index.php');
 	}
 	else
 	{
+	$_SESSION['Message']='<div class="avert" >Ce lien d\'activation est invalide ou a déjà été utilisé.</div>';
 	header('Location:index.php');
 	}
 ?>
