@@ -15,6 +15,7 @@ $men=10;
 	<body>
 <?php include('header.php'); ?>
 	<article>
+	<?php echo($_SESSION['Message']);$_SESSION['Message']="" ?>
 	<span class="frm" >
 	<form method="post" action="raz-mdp.php" >
 	<h3>Réinitialisation de mon mot de passe</h3>

@@ -18,6 +18,11 @@ header
 div.avert
 {
 	color:black;
+	background-color:rgb(255, 200, 100);
+}
+div.valid
+{
+	color:black;
 	background-color:rgb(0, 255, 151);
 }
 #hc
@@ -148,7 +153,7 @@ td input, td select
 }
 @media screen and (orientation: landscape)
 {
-div.avert
+div.avert, div.valid
 {
 	font-size:max(1.5vw,1.5vh);
 }
@@ -186,7 +191,7 @@ input,option,select
 }
 @media screen and (orientation: portrait)
 {
-div.avert
+div.avert, div.valid
 {
 	font-size:max(1vw,1vh);
 }
