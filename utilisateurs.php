@@ -47,6 +47,7 @@ $rep->closeCursor();
 	<?php include('header.php'); ?>
 	<article>
 	<h4>Liste des utilisateurs</h4>
+	<?php if (isset($_SESSION['Message'])) {echo($_SESSION['Message']);unset($_SESSION['Message']);} ?>
 
 	<div class="stats">
 		<div class="stat-box">
