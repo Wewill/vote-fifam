@@ -4,17 +4,19 @@ $_SESSION['Message']="";
 $id="";
 $_POST['pnm']=str_replace(', ','-',ucwords(strtolower(str_replace('-',', ',nty(corr(trim($_POST["pnm"]),'p'))))));
 $_POST["nm"]=strtoupper(nty(corr(trim($_POST["nm"]),'n')));
-$rep=$cbdd->query('SELECT id FROM pub WHERE eml="'.encrypt(nty($_POST['em']),$clef).'" OR eml="'.encrypt(nty($_POST['cem']),$clef).'"');
+$_POST['em']=strtolower(trim(nty($_POST['em'])));
+$_POST['cem']=strtolower(trim(nty($_POST['cem'])));
+$rep=$cbdd->query('SELECT id FROM pub WHERE eml="'.encrypt($_POST['em'],$clef).'" OR eml="'.encrypt($_POST['cem'],$clef).'"');
 	while ($donnees = $rep->fetch())
 	{
 	$id=$donnees['id'];
 	$_SESSION['Message']='<div class="avert" >Vous avez déjà un compte.<br/>Connectez vous avec ce compte.<br/>Ou demandez le renouvellement de votre mot de passe.</div>';
 	}
 $rep->closeCursor();
-if (nty($_POST['cmdp'])==nty($_POST['mdp']) & nty($_POST['cem'])==nty($_POST['em']) & nty($_POST['nm'])!=="" & nty($_POST['pnm'])!=="" & $id=="")
+if (nty($_POST['cmdp'])==nty($_POST['mdp']) & $_POST['cem']==$_POST['em'] & nty($_POST['nm'])!=="" & nty($_POST['pnm'])!=="" & $id=="")
 	{
-	$cbdd->query('INSERT INTO pub (id,psd,mdp,eml,nm,pre,pht,act,vrf) VALUES(NULL,"","'.hash("sha256",nty($_POST['mdp'])).'","'.encrypt(nty($_POST['em']),$clef).'","'.encrypt($_POST["nm"],$clef).'","'.encrypt($_POST['pnm'],$clef).'","",0,'.(rand(100000,999999)).')');
-	$rep=$cbdd->query('SELECT id,vrf FROM pub WHERE eml="'.encrypt(nty($_POST['em']),$clef).'"');
+	$cbdd->query('INSERT INTO pub (id,psd,mdp,eml,nm,pre,pht,act,vrf) VALUES(NULL,"","'.hash("sha256",nty($_POST['mdp'])).'","'.encrypt($_POST['em'],$clef).'","'.encrypt($_POST["nm"],$clef).'","'.encrypt($_POST['pnm'],$clef).'","",0,'.(rand(100000,999999)).')');
+	$rep=$cbdd->query('SELECT id,vrf FROM pub WHERE eml="'.encrypt($_POST['em'],$clef).'"');
 		while ($donnees = $rep->fetch())
 		{
 		$id=$donnees['id'];

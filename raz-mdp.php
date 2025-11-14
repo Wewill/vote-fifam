@@ -1,7 +1,8 @@
-<?php 
+<?php
 include('BdD.php');
 $vrif="niet";
-$rep=$cbdd->query('SELECT * FROM pub WHERE eml="'.encrypt(nty($_POST['em1']), $clef).'" AND act=1 ');
+$_POST['em1']=strtolower(trim(nty($_POST['em1'])));
+$rep=$cbdd->query('SELECT * FROM pub WHERE eml="'.encrypt($_POST['em1'], $clef).'" AND act=1 ');
 		while ($donnees = $rep->fetch())
 		{
 		if (strtoupper(decrypt($donnees["pre"], $clef)[0])==$_POST['inip'] && strtoupper(decrypt($donnees["nm"], $clef)[0])==$_POST['inin']) {$id=$donnees["id"];$vrif="OK";$pnm=decrypt($donnees["pre"], $clef);}
