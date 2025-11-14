@@ -85,6 +85,7 @@ $rep->closeCursor();
 		<th>A voté</th>
 		<th>Nb votes</th>
 		<th>Lien validé</th>
+		<th colspan="3">&nbsp;</th>
 	</tr><?php
 $rep=$cbdd->query('SELECT p.id, p.nm, p.pre, p.eml, p.act, p.vrf,
 					COUNT(DISTINCT v.id) as nb_votes
@@ -113,13 +114,20 @@ $rep=$cbdd->query('SELECT p.id, p.nm, p.pre, p.eml, p.act, p.vrf,
 		// Lien email validé ?
 		if ($donnees["vrf"] == 0) {
 			$lien_valide = '<span class="status-oui">Oui</span>';
+		} else if ($donnees["vrf"] >= 100000 && $donnees["act"] == 1) {
+			$lien_valide = '<span class="status-attente">Réinit. mdp</span>';
 		} else if ($donnees["vrf"] >= 100000) {
 			$lien_valide = '<span class="status-attente">En attente</span>';
 		} else {
 			$lien_valide = '<span class="status-non">Non</span>';
 		}
 
-		echo("\n\t".'<tr><td>'.$nom.'</td><td>'.$prenom.'</td><td>'.$email.'</td><td>'.$statut.'</td><td>'.$a_vote.'</td><td>'.$nb_votes.'</td><td>'.$lien_valide.'</td></tr>');
+		// Boutons d'action
+		$btn_email = '<a href="renvoyer-email.php?id='.$donnees["id"].'" title="Renvoyer email">&#9993;</a>';
+		$btn_mdp = '<a href="reset-mdp.php?id='.$donnees["id"].'" title="Réinitialiser MDP">&#128273;</a>';
+		$btn_suppr = '<a href="moins-u.php?id='.$donnees["id"].'" title="Supprimer">&#9447;</a>';
+
+		echo("\n\t".'<tr><td>'.$nom.'</td><td>'.$prenom.'</td><td>'.$email.'</td><td>'.$statut.'</td><td>'.$a_vote.'</td><td>'.$nb_votes.'</td><td>'.$lien_valide.'</td><td class="fin" >'.$btn_email.'</td><td class="fin" >'.$btn_mdp.'</td><td class="fin" >'.$btn_suppr.'</td></tr>');
 		}
 	$rep->closeCursor();
 ?>

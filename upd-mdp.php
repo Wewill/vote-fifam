@@ -37,8 +37,8 @@ if (nty($_POST['cmdp'])==nty($_POST['mdp']) && $id==$_POST['id'])
 	$msg.='<p style="font-size: 0.8em; color: #999;">FIFAM - Festival International du Film d\'Amiens</p>';
 	$msg.='</div></body></html>';
 	mail($to,$subject,$msg, $headers);
-	$_SESSION['em']=$em;
-	header('Location:index.php');
+	$_SESSION['Message']='<div class="valid" >Votre mot de passe a bien été modifié ! Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.</div>';
+	header('Location:coin.php');
 	}
 	else
 	{
