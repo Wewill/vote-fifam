@@ -3,6 +3,12 @@ include('BdD.php');
 if ($_SESSION["qui"]!=0) {header('Location:index.php');}
 include("../phpqrcode/qrlib.php");
 $_GET['s']=preg_replace("/[^0-9]/","",$_GET['s']);
+// Récupérer le nombre de tickets à générer (par défaut 12)
+$nb_tickets = isset($_GET['n']) ? intval($_GET['n']) : 12;
+// Valider que c'est une valeur autorisée
+if (!in_array($nb_tickets, [4, 12, 180, 252, 300])) {
+	$nb_tickets = 12;
+}
 $film='';
 $rep=$cbdd->query('SELECT film FROM seances WHERE id='.$_GET['s'].'');
 	while ($donnees = $rep->fetch())
@@ -43,7 +49,7 @@ if ($film=='')
 	$rep->closeCursor();
 	$cbdd->query('UPDATE tickets SET film='.$c1.', val='.$c2.' WHERE id='.$counter_id);
 	}
-for ($x=0;$x<12;$x++) 
+for ($x=0;$x<$nb_tickets;$x++) 
 	{
 	//die(var_dump($film));
 	$code=substr(str_shuffle("abcdefghijkmnopqrstuvwxyz123456789ABCDEFGHJKLMNPQRSTUVWXYZ"),0,6);
