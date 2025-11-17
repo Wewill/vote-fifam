@@ -18,7 +18,7 @@ header
 div.avert
 {
 	color:black;
-	background-color:rgb(255, 200, 100);
+	background-color:#ff9100;
 }
 div.valid
 {
@@ -171,7 +171,7 @@ span.frm
 }
 table
 {
-	font-size:max(1.6vw,1.6vh);
+	font-size:max(1.4vw,1.4vh);
 	margin:auto;
 }
 td,th
@@ -250,6 +250,11 @@ img.vt
 	gap: 15px;
 	margin: 20px 0;
 }
+@media (max-width: 768px) {
+	.stats {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
 .stat-box {
 	background: #f5f5f5;
 	padding: 15px;
@@ -258,16 +263,16 @@ img.vt
 	border-left: 4px solid #333;
 }
 .stat-box.actif {
-	border-left-color: #28a745;
+	border-left-color: rgb(0, 255, 151);
 }
 .stat-box.attente {
-	border-left-color: #ffc107;
+	border-left-color: #ff9100;
 }
 .stat-box.vote {
-	border-left-color: #007bff;
+	border-left-color: #8800ff;
 }
 .stat-box.non-vote {
-	border-left-color: #dc3545;
+	border-left-color: #9a000f;
 }
 .stat-number {
 	font-size: 2em;
@@ -281,19 +286,19 @@ img.vt
 }
 .status-oui {
 	font-size: 0.7em;
-	color: #28a745;
+	color: rgb(0, 255, 151);
 	font-weight: bold;
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
 .status-non {
 	font-size: 0.7em;
-	color: #dc3545;
+	color: #9a000f;
 	font-weight: bold;
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
 .status-attente {
 	font-size: 0.7em;
-	color: #ffc107;
+	color: #ff9100;
 	font-weight: bold;
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
