@@ -55,7 +55,7 @@ $rep=$cbdd->query('SELECT * FROM votes INNER JOIN films ON votes.film = films.id
 		$pdf->Cell(85,11,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Entourez votre note (5 étant la meilleure)'),0,1,'C');
 		$pdf->SetFont('Arial','I',8);
 		$pdf->SetX(10+$pls);
-		$pdf->MultiCell(85, 4, iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Deux personnes seront tiré•e•s au sort et gagneront une carte Licorne pour la 45e édition du Festival international du film d\'Amiens !'));
+		$pdf->MultiCell(85, 4, iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Deux personnes seront tiré•e•s au sort et gagneront une carte Licorne pour la prochaine édition du Festival international du film d\'Amiens !'));
 		$pdf->SetFont('Arial','B',10);
 		$pdf->SetX(10+$pls);
 		$pdf->Cell(85,7,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Nom : '.decrypt($donnees["nm"],$clef).''),0,1,'L');
