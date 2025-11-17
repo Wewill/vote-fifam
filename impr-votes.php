@@ -25,7 +25,7 @@ $rep=$cbdd->query('SELECT * FROM votes INNER JOIN films ON votes.film = films.id
 		$pdf->Cell(40,10,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Prix du public'),0,1,'C');
 		$pdf->SetX(59.5+$pls);
 		$pdf->SetFont('Arial','I',10);
-		$pdf->Cell(40,7,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','vote numérique :'),0,1,'C');
+		$pdf->Cell(40,7,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','-'),0,1,'C');
 		$pdf->SetXY(10+$pls,(floor($tr/2)*148.5+60));
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(85,5,iconv('UTF-8', 'ISO-8859-1//TRANSLIT',''.html_entity_decode($donnees["nom"]).''),0,1,'C');
@@ -39,7 +39,8 @@ $rep=$cbdd->query('SELECT * FROM votes INNER JOIN films ON votes.film = films.id
 		
 //		$pdf->Image('qr/'.$donnees["serie"].'-'.$nume.'.png', 68+$pls, (floor($tr/2)*148.5+28), -250);
 		$pdf->Image('img/liqrn.png', 74.5+$pls, (floor($tr/2)*148.5+34.5), -860);
-		$pdf->Image('img/t-lico.jpg', 10+$pls, (floor($tr/2)*148.5+8), -400);
+		//$pdf->Image('img/t-lico.jpg', 10+$pls, (floor($tr/2)*148.5+8), -400);
+		$pdf->Image('img/t-lico-'.(date("Y") - 1980).'.jpg', 10+$pls, (floor($tr/2)*148.5+8), -400); // ex: t-lico-44.jpg, t-lico-45.jpg ...
 		for ($x=0;$x<5;$x++)
 			{
 			if ($x==($donnees["note"]-1))
@@ -52,10 +53,10 @@ $rep=$cbdd->query('SELECT * FROM votes INNER JOIN films ON votes.film = films.id
 		$pdf->SetTextColor(0, 0, 0);
 		$pdf->SetXY(10+$pls,(floor($tr/2)*148.5+87));
 		$pdf->SetFont('Arial','',9);
-		$pdf->Cell(85,11,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Entourez votre note (5 étant la meilleure)'),0,1,'C');
+		$pdf->Cell(85,11,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Votre note (5 étant la meilleure)'),0,1,'C');
 		$pdf->SetFont('Arial','I',8);
 		$pdf->SetX(10+$pls);
-		$pdf->MultiCell(85, 4, iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Deux personnes seront tiré•e•s au sort et gagneront une carte Licorne pour la prochaine édition du Festival international du film d\'Amiens !'));
+		$pdf->MultiCell(85, 4, iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Gain : une carte Licorne pour la prochaine édition du Festival international du film d\'Amiens !'));
 		$pdf->SetFont('Arial','B',10);
 		$pdf->SetX(10+$pls);
 		$pdf->Cell(85,7,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Nom : '.decrypt($donnees["nm"],$clef).''),0,1,'L');

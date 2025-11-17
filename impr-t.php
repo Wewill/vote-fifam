@@ -59,7 +59,7 @@ $rep=$cbdd->query('SELECT * FROM tickets WHERE snc="'.$_GET['s'].'" AND val=1 OR
 		$pdf->Cell(85,11,iconv('UTF-8', 'ISO-8859-1//TRANSLIT','Entourez votre note (5 étant la meilleure)'),0,1,'C');
 		$pdf->SetFont('Arial','I',8);
 		$pdf->SetX(10+$pls);
-		$pdf->MultiCell(85, 4, iconv('UTF-8', 'ISO-8859-1//TRANSLIT',"Deux personnes seront tirées au sort et gagneront une carte Licorne pour la prochaine édition du Festival International du Film d'Amiens !"));
+		$pdf->MultiCell(85, 4, iconv('UTF-8', 'ISO-8859-1//TRANSLIT',"Deux personnes seront tiré.e.s au sort et gagneront une carte Licorne pour la prochaine édition du Festival International du Film d'Amiens !"));
 		$pdf->SetFont('Arial','B',10);
 		$pdf->SetX(10+$pls);
 		$pdf->Cell(85,7,'Nom : _____________________________________',0,1,'L');
