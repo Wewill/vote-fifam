@@ -21,6 +21,15 @@ $rep=$cbdd->query('SELECT serie,nno FROM tickets WHERE film='.$f.' AND snc='.$_G
 $rep->closeCursor();
 if ($film=='')
 	{
+	// Vérifier si la ligne id=0 existe, sinon la créer
+	$rep=$cbdd->query('SELECT COUNT(*) as cnt FROM tickets WHERE id=0');
+	$count = $rep->fetch();
+	if ($count['cnt'] == 0) {
+		// Initialiser le compteur de séries (commence à AA)
+		$cbdd->exec('INSERT INTO tickets (id, serie, nno, code, film, snc, val) VALUES (0, "", 0, "", 0, 0, 64)');
+	}
+	$rep->closeCursor();
+
 	$rep=$cbdd->query('SELECT film,val FROM tickets WHERE id=0 ');
 		while ($donnees = $rep->fetch())
 		{
