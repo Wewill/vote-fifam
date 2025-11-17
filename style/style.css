@@ -18,7 +18,7 @@ header
 div.avert
 {
 	color:black;
-	background-color:#ff9100;
+	background-color:#ffb700;
 }
 div.valid
 {
@@ -266,13 +266,13 @@ img.vt
 	border-left-color: rgb(0, 255, 151);
 }
 .stat-box.attente {
-	border-left-color: #ff9100;
+	border-left-color: #ffb700;
 }
 .stat-box.vote {
 	border-left-color: #8800ff;
 }
 .stat-box.non-vote {
-	border-left-color: #9a000f;
+	border-left-color: #474747;
 }
 .stat-number {
 	font-size: 2em;
@@ -292,13 +292,13 @@ img.vt
 }
 .status-non {
 	font-size: 0.7em;
-	color: #9a000f;
+	color: #474747;
 	font-weight: bold;
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
 .status-attente {
 	font-size: 0.7em;
-	color: #ff9100;
+	color: #ffb700;
 	font-weight: bold;
 	font-family: "Bureau Grot Condensed", Arial, Helvetica, sans-serif;
 }
