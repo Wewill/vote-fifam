@@ -77,7 +77,7 @@ $rep->closeCursor();
 	</div>
 
 	<br/>
-	<table>
+	<table class="user">
 	<tr>
 		<th>Nom</th>
 		<th>Prénom</th>
@@ -124,8 +124,8 @@ $rep=$cbdd->query('SELECT p.id, p.nm, p.pre, p.eml, p.act, p.vrf,
 		}
 
 		// Boutons d'action
-		$btn_email = '<a href="renvoyer-email.php?id='.$donnees["id"].'" title="Renvoyer email">&#9993;</a>';
-		$btn_mdp = '<a href="reset-mdp.php?id='.$donnees["id"].'" title="Réinitialiser MDP">&#128273;</a>';
+		$btn_email = '<a href="renvoyer-email.php?id='.$donnees["id"].'" title="Renvoyer email" style="font-size: 130%; vertical-align: 0.2em;">&#9993;</a>';
+		$btn_mdp = '<a href="reset-mdp.php?id='.$donnees["id"].'" title="Réinitialiser MDP">↩︎</a>';
 		$btn_suppr = '<a href="moins-u.php?id='.$donnees["id"].'" title="Supprimer">&#9447;</a>';
 
 		echo("\n\t".'<tr><td>'.$nom.'</td><td>'.$prenom.'</td><td>'.$email.'</td><td>'.$statut.'</td><td>'.$a_vote.'</td><td>'.$nb_votes.'</td><td>'.$lien_valide.'</td><td class="fin" >'.$btn_email.'</td><td class="fin" >'.$btn_mdp.'</td><td class="fin" >'.$btn_suppr.'</td></tr>');

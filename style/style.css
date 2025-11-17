@@ -154,6 +154,12 @@ td input, td select
 {
 	border:none;
 }
+@media (max-width: 768px) {
+	table.user
+	{
+		font-size:max(1.4vw,0.6vh) !important;
+	}
+}
 @media screen and (orientation: landscape)
 {
 div.avert, div.valid
