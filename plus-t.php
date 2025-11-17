@@ -21,18 +21,19 @@ $rep=$cbdd->query('SELECT serie,nno FROM tickets WHERE film='.$f.' AND snc='.$_G
 $rep->closeCursor();
 if ($film=='')
 	{
-	// Vérifier si la ligne id=0 existe, sinon la créer
-	$rep=$cbdd->query('SELECT COUNT(*) as cnt FROM tickets WHERE id=0');
+	// Vérifier si la ligne compteur existe (identifiée par serie='', nno=0, code='', snc=0)
+	$rep=$cbdd->query('SELECT COUNT(*) as cnt FROM tickets WHERE serie="" AND nno=0 AND code="" AND snc=0');
 	$count = $rep->fetch();
 	if ($count['cnt'] == 0) {
 		// Initialiser le compteur de séries (commence à AA)
-		$cbdd->exec('INSERT INTO tickets (id, serie, nno, code, film, snc, val) VALUES (0, "", 0, "", 0, 0, 64)');
+		$cbdd->exec('INSERT INTO tickets (serie, nno, code, film, snc, val) VALUES ("", 0, "", 0, 0, 64)');
 	}
 	$rep->closeCursor();
 
-	$rep=$cbdd->query('SELECT film,val FROM tickets WHERE id=0 ');
+	$rep=$cbdd->query('SELECT id, film, val FROM tickets WHERE serie="" AND nno=0 AND code="" AND snc=0 LIMIT 1');
 		while ($donnees = $rep->fetch())
 		{
+		$counter_id=$donnees["id"];
 		$c1=$donnees["film"];
 		$c2=$donnees["val"];
 		$c2++;
@@ -40,7 +41,7 @@ if ($film=='')
 		$film=''.chr($c1+65).chr($c2).''; // +65
  		}
 	$rep->closeCursor();
-	$cbdd->query('UPDATE tickets SET film='.$c1.', val='.$c2.' WHERE id=0 ');
+	$cbdd->query('UPDATE tickets SET film='.$c1.', val='.$c2.' WHERE id='.$counter_id);
 	}
 for ($x=0;$x<12;$x++) 
 	{
