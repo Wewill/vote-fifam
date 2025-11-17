@@ -94,7 +94,7 @@ $rep=$cbdd->query('SELECT p.id, p.nm, p.pre, p.eml, p.act, p.vrf,
 					LEFT JOIN votes v ON p.id = v.qui
 					WHERE p.id != 0
 					GROUP BY p.id
-					ORDER BY p.nm, p.pre');
+					ORDER BY p.id DESC');
 		while ($donnees = $rep->fetch())
 		{
 		$nom = decrypt($donnees["nm"],$clef);
